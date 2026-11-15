@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Processing Agreement — Vaultix Labs</title>
+  <meta name="description" content="Data Processing Agreement (DPA) for Vaultix Gate: GDPR Article 28 terms covering roles, processing scope, security measures, subprocessors and data subject rights.">
+  <link rel="canonical" href="https://vaultixlabs.com/dpa/">
+  <link rel="alternate" hreflang="en" href="https://vaultixlabs.com/dpa/">
+  <link rel="alternate" hreflang="es" href="https://vaultixlabs.com/es/dpa/">
+  <link rel="alternate" hreflang="x-default" href="https://vaultixlabs.com/dpa/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Data Processing Agreement — Vaultix Labs">
+  <meta property="og:description" content="GDPR Article 28 data processing terms for Vaultix Gate.">
+  <meta property="og:url" content="https://vaultixlabs.com/dpa/">
+  <meta property="og:image" content="https://vaultixlabs.com/assets/og-image.png">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230E1526'/><path d='M28 72 V40 L50 26 L72 40 V72' stroke='%23C9A227' stroke-width='8' fill='none' stroke-linecap='round' stroke-linejoin='round'/><rect x='45' y='54' width='10' height='18' rx='2' fill='%23C9A227'/></svg>">
+  <link rel="stylesheet" href="../assets/css/site.css?v=12">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="brand" href="/">
+      <svg class="mark" viewBox="0 0 100 100" fill="none"><rect width="100" height="100" rx="24" fill="#0E1526"/><path d="M28 72 V40 L50 26 L72 40 V72" stroke="#C9A227" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><rect x="45" y="54" width="10" height="18" rx="2" fill="#C9A227"/></svg>
+      <span>Vaultix Gate<small>by Vaultix Labs</small></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="/#how">How it works</a>
+      <a href="/#features">Platform</a>
+      <a href="/#why">Why Vaultix</a>
+      <a href="/#plans">Plans</a>
+      <a href="/#developers">Developers</a>
+      <a href="/#security">Security</a>
+      <a href="/#faq">FAQ</a>
+      <span class="lang-switch" aria-label="Language">
+        <a href="/dpa/" class="active" hreflang="en" aria-label="English" title="English" aria-current="true"><svg class="flag" viewBox="0 0 24 16" aria-hidden="true" focusable="false"><rect width="24" height="16" fill="#fff"/><g fill="#B31942"><rect width="24" height="1.4"/><rect y="2.8" width="24" height="1.4"/><rect y="5.6" width="24" height="1.4"/><rect y="8.4" width="24" height="1.4"/><rect y="11.2" width="24" height="1.4"/><rect y="14" width="24" height="1.4"/></g><rect width="10" height="8" fill="#0A3161"/></svg><span>EN</span></a><a href="/es/dpa/" hreflang="es" aria-label="Español" title="Español"><svg class="flag" viewBox="0 0 24 16" aria-hidden="true" focusable="false"><rect width="24" height="16" fill="#AA151B"/><rect y="4" width="24" height="8" fill="#F1BF00"/></svg><span>ES</span></a>
+      </span>
+      <a class="btn btn-gold" href="mailto:hello@vaultixlabs.com?subject=Early%20access%20request">Request early access</a>
+    </div>
+  </div>
+</nav>
+
+<main class="legal-doc">
+  <h1>Data Processing Agreement</h1>
+  <p class="updated">Last updated: November 7, 2026 · <span class="placeholder">Draft — pending legal review</span></p>
+
+  <p>This Data Processing Agreement ("DPA") forms part of the agreement between <span class="placeholder">[Customer legal entity]</span> ("Controller") and Vaultix Labs (<span class="placeholder">[legal entity name]</span>, "Processor") governing use of the Vaultix Gate service. It reflects the requirements of GDPR Article 28 and equivalent data-protection laws.</p>
+
+  <h2>1. Roles and scope</h2>
+  <p>The Controller determines the purposes and means of processing end users' personal data. The Processor processes personal data only on the Controller's documented instructions, as described in the Service documentation and API contract.</p>
+
+  <h2>2. Subject matter, duration and nature of processing</h2>
+  <table>
+    <tr><th>Element</th><th>Detail</th></tr>
+    <tr><td>Subject matter</td><td>Biometric and device-based identity verification for user onboarding</td></tr>
+    <tr><td>Duration</td><td>For the term of the Service agreement plus the retention period defined by the Controller</td></tr>
+    <tr><td>Nature</td><td>Collection via capture widget/hosted page, biometric matching, risk scoring, evidence storage, audit logging, webhook delivery</td></tr>
+    <tr><td>Purpose</td><td>Identity verification, fraud prevention, regulatory compliance and audit evidence</td></tr>
+  </table>
+
+  <h2>3. Categories of personal data and data subjects</h2>
+  <ul>
+    <li><strong>Data subjects:</strong> individuals onboarded by the Controller (end users).</li>
+    <li><strong>Data categories:</strong> identity metadata (user reference, document type/country), facial images and biometric embeddings, device and network signals, verification events, consent records.</li>
+    <li><strong>Special categories:</strong> biometric data (GDPR Art. 9) — processed solely on the basis of explicit consent captured in the verification flow.</li>
+  </ul>
+
+  <h2>4. Processor obligations</h2>
+  <p>The Processor shall:</p>
+  <ul>
+    <li>Process personal data only on documented instructions, including for international transfers, unless required by law;</li>
+    <li>Ensure personnel are bound by confidentiality obligations;</li>
+    <li>Implement the technical and organizational measures described in Annex A;</li>
+    <li>Engage subprocessors only with the Controller's general authorization, under written terms imposing equivalent data-protection obligations; maintain and share the current subprocessor list;</li>
+    <li>Assist the Controller, taking into account the nature of processing, in responding to data-subject requests (access, rectification, erasure, restriction, portability, objection);</li>
+    <li>Assist with DPIA/EIPD and prior-consultation obligations;</li>
+    <li>At the end of services, delete or return all personal data at the Controller's choice, unless retention is required by law; biometric templates are rendered unrecoverable upon key revocation;</li>
+    <li>Make available information necessary to demonstrate compliance and allow audits as described in Section 7.</li>
+  </ul>
+
+  <h2>5. Security measures (summary — Annex A)</h2>
+  <ul>
+    <li>Encryption in transit (TLS) and at rest (AWS KMS, per-tenant customer-managed keys with envelope encryption);</li>
+    <li>Zero-persistence handling of plaintext biometrics; ciphertext-only template storage;</li>
+    <li>Regional data residency — EU cell in AWS eu-west-1;</li>
+    <li>Append-only, hash-chained audit log with write-once storage, RFC 3161 timestamps and ECDSA signatures;</li>
+    <li>Explicit consent gate before any biometric capture; consent hash appended to audit trail;</li>
+    <li>Separation of biometric vectors from personal metadata; blind indexing;</li>
+    <li>Access controls, least-privilege IAM, no biometric data in logs.</li>
+  </ul>
+
+  <h2>6. Subprocessors and international transfers</h2>
+  <p>Current subprocessors are limited to Amazon Web Services entities in the regions hosting the relevant cell. Where data is transferred outside the EU/EEA, the Processor ensures appropriate safeguards under GDPR Chapter V (Standard Contractual Clauses or equivalent). The Controller may object to new subprocessors on reasonable data-protection grounds.</p>
+
+  <h2>7. Audits</h2>
+  <p>Upon reasonable request, the Processor will provide information and, where justified by the risk, allow audits or inspections subject to confidentiality and reasonable scheduling. Audits are at the Controller's cost unless they reveal material non-compliance.</p>
+
+  <h2>8. Data subject rights and breach notification</h2>
+  <p>The Processor will notify the Controller without undue delay after becoming aware of a personal-data breach, providing information reasonably necessary for the Controller to meet its notification obligations. The Processor assists with data-subject requests as described in Section 4.</p>
+
+  <h2>9. Liability</h2>
+  <p>Each party's liability under this DPA is subject to the limitations in the main agreement, except where mandatory law provides otherwise.</p>
+
+  <h2>10. Term</h2>
+  <p>This DPA remains in effect for the duration of the Service agreement and the period necessary to return or delete personal data.</p>
+
+  <h2>Contact</h2>
+  <p>Data protection inquiries: <a href="mailto:hello@vaultixlabs.com">hello@vaultixlabs.com</a> · <span class="placeholder">[DPO contact if appointed]</span>.</p>
+</main>
+
+<footer>
+  <div class="container foot-inner">
+    <span>© 2026 <b>Vaultix Labs</b> — Identity verification infrastructure</span>
+    <div class="foot-links">
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/dpa/">DPA</a>
+      <a href="/">Back to home</a>
+      <span class="lang-switch">
+        <a href="/dpa/" class="active" hreflang="en" aria-label="English" title="English" aria-current="true"><svg class="flag" viewBox="0 0 24 16" aria-hidden="true" focusable="false"><rect width="24" height="16" fill="#fff"/><g fill="#B31942"><rect width="24" height="1.4"/><rect y="2.8" width="24" height="1.4"/><rect y="5.6" width="24" height="1.4"/><rect y="8.4" width="24" height="1.4"/><rect y="11.2" width="24" height="1.4"/><rect y="14" width="24" height="1.4"/></g><rect width="10" height="8" fill="#0A3161"/></svg><span>EN</span></a><a href="/es/dpa/" hreflang="es" aria-label="Español" title="Español"><svg class="flag" viewBox="0 0 24 16" aria-hidden="true" focusable="false"><rect width="24" height="16" fill="#AA151B"/><rect y="4" width="24" height="8" fill="#F1BF00"/></svg><span>ES</span></a>
+      </span>
+      <a href="mailto:hello@vaultixlabs.com">hello@vaultixlabs.com</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var toggle = document.getElementById('navToggle');
+    var links = document.getElementById('navLinks');
+    toggle.addEventListener('click', function () {
+      var open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && links.classList.contains('open')) {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.focus();
+      }
+    });
+    links.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') links.classList.remove('open');
+    });
+  })();
+</script>
+
+</body>
+</html>
