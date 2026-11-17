@@ -8,7 +8,7 @@ The live local copy is served from `C:\xampp\htdocs\vaultixlabs.github.io`.
 To sync the repo to it, run (PowerShell — Git Bash mangles the `/` flags):
 
 ```powershell
-robocopy "C:\Users\rodmo\OneDrive\vaultixlabs.github.io" "C:\xampp\htdocs\vaultixlabs.github.io" /MIR /XD .git /NFL /NDL /NJH
+robocopy "C:\Users\rodmo\OneDrive\DevProjects\vaultixlabs.github.io" "C:\xampp\htdocs\vaultixlabs.github.io" /MIR /XD .git /NFL /NDL /NJH
 ```
 
 `/MIR` mirrors the tree (deletes extras in destination). Robocopy exit codes 0–7 are success.
