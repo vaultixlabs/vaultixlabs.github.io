@@ -57,7 +57,7 @@
         "applicationCategory": "SecurityApplication",
         "operatingSystem": "Web",
         "url": "https://vaultixlabs.com/",
-        "description": "Compliance-first biometric identity verification for banks, neobanks and fintechs: certified liveness, face matching, device intelligence and a cryptographic audit trail.",
+        "description": "Compliance-first biometric identity verification for banks, neobanks and fintechs: AWS Rekognition liveness, face matching, device intelligence and a cryptographic audit trail.",
         "provider": { "@id": "https://vaultixlabs.com/#org" }
       },
       {
@@ -67,12 +67,12 @@
           {
             "@type": "Question",
             "name": "Where is our users' biometric data stored?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Vaultix Gate operates across the United States, Latin America, and Europe. For customers in the European Union, biometric data is stored in Europe, supporting GDPR compliance." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Vaultix Gate serves organizations across Europe, the United States, and Latin America. For customers in the European Union, biometric data is stored in Europe, supporting GDPR compliance." }
           },
           {
             "@type": "Question",
             "name": "Can Vaultix Labs access our users' face templates?",
-            "acceptedAnswer": { "@type": "Answer", "text": "No. Face data is encrypted with keys controlled by your organization. Vaultix operates the matching infrastructure but never holds the key material, making templates unreadable to us." }
+            "acceptedAnswer": { "@type": "Answer", "text": "No. Face data is encrypted under dedicated per-client keys your organization can revoke at any time. Revoking a key makes every template it protects cryptographically unrecoverable, even for Vaultix." }
           },
           {
             "@type": "Question",
@@ -87,17 +87,17 @@
           {
             "@type": "Question",
             "name": "What can our compliance team see?",
-            "acceptedAnswer": { "@type": "Answer", "text": "A dedicated dashboard provides the full verification queue, risk scores based on three signals (face match, liveness, and device reputation), configurable signal weighting, and a review queue for borderline cases. Exportable evidence packages include timestamps and digital signatures." }
+            "acceptedAnswer": { "@type": "Answer", "text": "A dedicated dashboard provides the full verification queue, risk scores based on three signals (face match, liveness, and device signals), per-tenant review policies, and a review queue for borderline cases. Exportable evidence packages include timestamps and digital signatures." }
           },
           {
             "@type": "Question",
             "name": "How long is verification data retained?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Retention is configurable per client. Audit frames are stored in tamper-resistant storage, with a default retention period of 12 to 24 months to support dispute resolution and regulatory evidence requirements. Metadata follows your defined retention policy." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Retention is configurable per client. Encrypted capture frames are kept for up to 91 days for review and then deleted; evidence objects are retained in tamper-proof storage for a configurable period of 90 days to 10 years. Metadata follows your defined retention policy." }
           },
           {
             "@type": "Question",
             "name": "Is the verification flow accessible?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. The capture widget meets WCAG 2.2 AA, with full keyboard navigation, screen-reader guidance, optional audio cues, and conversational error messages in your users' language." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Vaultix Gate is designed to WCAG 2.2 AA, with screen-reader guidance and conversational error messages in plain language. An officer-assisted review path is available as an alternative." }
           },
           {
             "@type": "Question",
@@ -141,12 +141,12 @@
     <div>
       <div class="eyebrow">Biometric identity verification</div>
       <h1>Verify Every Identity. <span class="serif">Protect Every Interaction.</span></h1>
-      <p class="sub">Bring document OCR, biometric liveness, and identity verification together in one powerful SaaS solution for web and mobile. Verify customers, employees, and vendors across the United States, the Americas, and Europe. Strengthen security, simplify onboarding, and give your compliance teams auditable evidence.</p>
+      <p class="sub">Bring document OCR, biometric liveness, and identity verification together in one powerful SaaS solution. Verify customers, employees, and vendors across the United States, the Americas, and Europe. Strengthen security, simplify onboarding, and give your compliance teams auditable evidence.</p>
       <div class="cta-row">
         <a class="btn btn-gold" href="mailto:hello@vaultixlabs.com?subject=Early%20access%20request">Request early access</a>
         <a class="btn btn-ghost" href="#how">See how it works</a>
       </div>
-      <div class="proof"><span class="dot"></span> Now onboarding pilot customers in the EU and the Americas</div>
+      <div class="proof"><span class="dot"></span> Now accepting pilot customers in the EU and the Americas</div>
     </div>
 
     <!-- product mockup -->
@@ -172,13 +172,13 @@
             <div class="queue-head"><span>Applicant</span><span style="text-align:right">Risk</span><span style="text-align:right">Status</span></div>
             <div class="qrow"><div class="hash">u_9f2a…c41d<small>passport · ES</small></div><div class="score low">08</div><div class="pill low">SCA OK</div></div>
             <div class="qrow"><div class="hash">u_77be…09af<small>id card · DE</small></div><div class="score low">14</div><div class="pill low">SCA OK</div></div>
-            <div class="qrow"><div class="hash">u_b31c…88e2<small>passport · FR</small></div><div class="score med">47</div><div class="pill med">STEP-UP</div></div>
+            <div class="qrow"><div class="hash">u_b31c…88e2<small>passport · FR</small></div><div class="score med">47</div><div class="pill med">REVIEW</div></div>
             <div class="qrow"><div class="hash">u_4dd0…13bb<small>id card · IT</small></div><div class="score low">11</div><div class="pill rev">REVIEW</div></div>
           </div>
         </div>
       </div>
       <div class="float-card">
-        <span class="chk">✓ Photo match 96.4</span> · Certified liveness
+        <span class="chk">✓ Photo match 96.4</span> · Rekognition liveness
         <small>Encrypted under tenant key · evidence signed</small>
       </div>
     </div>
@@ -207,12 +207,12 @@
       <div class="step">
         <div class="num">03</div>
         <h3>Liveness and photo match</h3>
-        <p>A certified liveness test proves the person is really there, then their photo is matched with the one on the document.</p>
+        <p>AWS Rekognition liveness proves the person is really there, then their photo is matched with the one on the document.</p>
       </div>
       <div class="step">
         <div class="num">04</div>
         <h3>Risk decision</h3>
-        <p>A risk score returns approve, step up or block. Your team can review, override and export every decision with its evidence.</p>
+        <p>A risk score returns approve, review or block. Your team can review, override and export every decision with its evidence.</p>
       </div>
     </div>
   </div>
@@ -223,8 +223,8 @@
   <div class="container feat-grid">
     <div class="feat-copy">
       <div class="eyebrow">Capture experience</div>
-      <h2>Errors that guide, <span class="serif">not reject</span>.</h2>
-      <p>Most verification tools answer a bad photo with a generic "document invalid" and the user gives up. Vaultix Gate checks the image right on the user's device and tells them exactly what to fix, in plain language and in their own language.</p>
+      <h2>Error messages that guide, <span class="serif">not just reject</span>.</h2>
+      <p>Most verification tools answer a bad photo with a generic "document invalid" and the user gives up. Vaultix Gate checks the image right on the user's device and tells them exactly what to fix, in plain terms.</p>
       <ul>
         <li>Checks brightness, framing and glare in real time, before the photo is even sent</li>
         <li>Plain-language guidance instead of dead-end error codes</li>
@@ -267,12 +267,12 @@
   <div class="container feat-grid flip">
     <div class="feat-copy">
       <div class="eyebrow">Data custody</div>
-      <h2>Your Biometrics. <span class="serif">Your Keys. Your Control.</span></h2>
-      <p>Biometric templates are encrypted from creation using dedicated keys controlled by your organization, never Vaultix. Revoke access, and those templates become inaccessible, even to us.</p>
+      <h2>Your Biometrics. <span class="serif">Keys You Can Revoke.</span></h2>
+      <p>Biometric templates are encrypted from creation under dedicated per-client keys your organization can revoke at any time. Revoking a key cryptographically destroys every template it protects.</p>
       <ul>
-        <li>Your keys, your control: dedicated AWS Key Management Service (KMS) encryption keys for every client, revocable at any time</li>
+        <li>Revocable by you: dedicated encryption keys for every client, revocable at any time</li>
         <li>Data separation: biometric templates are stored separately from personal information</li>
-        <li>Regional data residency: sensitive data stays within the regional infrastructure serving your organization; for EU customers, biometric data is stored in Europe to support General Data Protection Regulation (GDPR) compliance</li>
+        <li>Data residency: for EU customers, biometric data is stored in the EU region to support General Data Protection Regulation (GDPR) compliance</li>
       </ul>
     </div>
     <div class="vis">
@@ -281,8 +281,8 @@
           <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5zm-3 8V7a3 3 0 1 1 6 0v3H9z" fill="#C9A227"/></svg>
         </div>
         <div class="cap">Template #7F3A, encrypted from creation</div>
-        <div class="vector-row"><i>x₁</i><i>x₂</i><i>x₃</i><i>…</i><i>x₅₁₁</i><i>x₅₁₂</i></div>
-        <div class="cap">512-number face signature · stored only as ciphertext</div>
+        <div class="vector-row"><i>0x9f</i><i>0x2c</i><i>0xa7</i><i>…</i><i>0x41</i><i>0xd8</i></div>
+        <div class="cap">Encrypted face reference · stored only as ciphertext</div>
         <div class="shred">Key revoked → <b>unrecoverable</b> · even to us</div>
       </div>
     </div>
@@ -295,7 +295,8 @@
     <div class="feat-copy">
       <div class="eyebrow">Compliance console</div>
       <h2>Every Decision. <span class="serif">Clear, Traceable, Auditable.</span></h2>
-      <p>Every verification decision includes its risk score, supporting signals, and signed evidence. Your team can review decisions in seconds and easily export documentation for regulators, audits, and disputes.</p>
+      <p>Every verification decision includes its risk score, supporting signals, and signed evidence.</p>
+      <p>Your risk and compliance team can review decisions in seconds and easily export documentation for regulators, audits, and disputes.</p>
       <ul>
         <li>Transparent risk scoring: configurable scores based on biometric verification, liveness, and device signals</li>
         <li>Easy evidence export: export and share signed verification records with regulatory authorities and auditors</li>
@@ -340,12 +341,12 @@
           <tr>
             <td>Data security</td>
             <td class="them">Biometric templates stored in vendor-controlled environments</td>
-            <td class="us-cell"><span class="tick">✓</span> Encrypted templates protected by keys controlled by your organization</td>
+            <td class="us-cell"><span class="tick">✓</span> Encrypted templates with per-client keys your organization can revoke</td>
           </tr>
           <tr>
             <td>Data residency</td>
             <td class="them">Unclear regional data storage and processing</td>
-            <td class="us-cell"><span class="tick">✓</span> Regional data storage, including European data residency for EU customers</td>
+            <td class="us-cell"><span class="tick">✓</span> European data residency for EU customers</td>
           </tr>
           <tr>
             <td>Pricing model</td>
@@ -360,7 +361,7 @@
           <tr>
             <td>Accessibility</td>
             <td class="them">Inconsistent accessibility support</td>
-            <td class="us-cell"><span class="tick">✓</span> Designed to meet Web Content Accessibility Guidelines (WCAG) 2.2 AA standards, with on-screen guidance and full keyboard support</td>
+            <td class="us-cell"><span class="tick">✓</span> Designed to Web Content Accessibility Guidelines (WCAG) 2.2 AA, with on-screen guidance for capture issues</td>
           </tr>
         </tbody>
       </table>
@@ -375,7 +376,7 @@
     <div class="section-head">
       <div class="eyebrow">Who it's for</div>
       <h2>One Verification Layer. <span class="serif">Every Identity Touchpoint.</span></h2>
-      <p class="lead">From customer onboarding to workforce verification and secure access, Vaultix Gate helps organizations verify identities online with confidence. One solution for banks, fintechs, businesses, and organizations across industries.</p>
+      <p class="lead">From customer onboarding to workforce verification, Vaultix Gate helps organizations verify identities online with confidence. One solution for banks, fintechs, businesses, and organizations across industries.</p>
     </div>
     <div class="cards-3">
       <div class="card">
@@ -393,18 +394,18 @@
         <h3>Employee and vendor onboarding</h3>
         <p>Verify remote employees, contractors, and suppliers before granting access to your organization.</p>
         <ul>
-          <li>Secure identity checks for remote workforce onboarding</li>
+          <li>Identity verification for employees, contractors and suppliers during onboarding</li>
           <li>Verification for vendor registration and supplier portals</li>
           <li>Web integration or hosted verification pages</li>
         </ul>
       </div>
       <div class="card">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3z" stroke="#C9A227" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="#C9A227" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Secure access and additional verification</h3>
+        <h3>Additional verification</h3>
         <p>Add an identity check whenever a security event or risk signal calls for additional verification.</p>
         <ul>
-          <li>Trigger liveness checks when suspicious activity is detected</li>
-          <li>Add verification before sensitive transactions or account access</li>
+          <li>Request a new verification whenever your risk policies require additional checks</li>
+          <li>Run verification before sensitive transactions or account access</li>
           <li>Configurable risk scoring and additional verification workflows</li>
         </ul>
       </div>
@@ -478,7 +479,7 @@
     </div>
     <div class="int-footer">
       <h3>One verification engine. Three integration paths.</h3>
-      <p>From customer and employee onboarding to vendor verification and fraud prevention, Vaultix Gate combines guided capture, liveness detection, 1:1 face matching, and device intelligence to help organizations establish trust and make informed identity decisions.</p>
+      <p>From customer and employee onboarding to vendor verification and fraud checks, Vaultix Gate combines guided capture, liveness detection, 1:1 face matching, and device intelligence to help organizations establish trust and make informed identity decisions.</p>
       <p class="int-tag">Built to fit your architecture. Ready for wherever identity verification matters.</p>
       <div style="margin-top:26px">
         <a class="btn btn-ghost" href="mailto:hello@vaultixlabs.com?subject=API%20%26%20integration%20docs">Get API docs</a>
@@ -498,15 +499,15 @@
     <div class="sec-grid">
       <div class="sec-card">
         <h3><span class="dot-i"></span>Nothing biometric stored in the clear</h3>
-        <p>Face images and biometric data are never written to disk or logs unencrypted. Raw captures are deleted after processing; encrypted templates and a limited set of audit frames are retained as evidence.</p>
+        <p>Face images and biometric data are never written to disk or logs unencrypted. Biometric plaintext is never persisted; encrypted capture frames are retained for up to 91 days for review, then automatically deleted. Encrypted templates and a limited set of audit frames are kept as evidence.</p>
       </div>
       <div class="sec-card">
-        <h3><span class="dot-i"></span>Keys under your organization's control</h3>
-        <p>Each client has dedicated encryption keys and retains control of the key material. Revoking a key makes the protected templates unrecoverable, even for Vaultix Labs.</p>
+        <h3><span class="dot-i"></span>Keys your organization can revoke</h3>
+        <p>Each client has dedicated encryption keys it can revoke at any time. Revoking a key makes the protected templates unrecoverable, even for Vaultix Labs.</p>
       </div>
       <div class="sec-card">
         <h3><span class="dot-i"></span>Regional data residency</h3>
-        <p>Data is stored in regional infrastructure across the United States, Latin America, and Europe. For European clients, biometric data remains within Europe, supporting GDPR compliance.</p>
+        <p>For European clients, biometric data is stored in Europe, supporting GDPR compliance.</p>
       </div>
       <div class="sec-card">
         <h3><span class="dot-i"></span>Cryptographically signed audit trail</h3>
@@ -518,7 +519,7 @@
       </div>
       <div class="sec-card">
         <h3><span class="dot-i"></span>Accessible by design</h3>
-        <p>WCAG 2.2 AA throughout: screen-reader guidance, full keyboard navigation, and optional audio cues.</p>
+        <p>Designed to WCAG 2.2 AA: screen-reader guidance and conversational error messages. Officer-assisted review available as an alternative path.</p>
       </div>
     </div>
   </div>
@@ -534,11 +535,11 @@
     <div class="faq-list">
       <details class="faq">
         <summary>Where is our users' biometric data stored?</summary>
-        <div class="faq-body"><p>Vaultix Gate operates across the United States, Latin America, and Europe. For customers in the European Union, biometric data is stored in Europe, supporting GDPR compliance.</p></div>
+        <div class="faq-body"><p>Vaultix Gate serves organizations across Europe, the United States, and Latin America. For customers in the European Union, biometric data is stored in Europe, supporting GDPR compliance.</p></div>
       </details>
       <details class="faq">
         <summary>Can Vaultix Labs access our users' face templates?</summary>
-        <div class="faq-body"><p>No. Face data is encrypted with keys controlled by your organization. Vaultix operates the matching infrastructure but never holds the key material, making templates unreadable to us.</p></div>
+        <div class="faq-body"><p>No. Face data is encrypted under dedicated per-client keys your organization can revoke at any time. Revoking a key makes every template it protects cryptographically unrecoverable, even for Vaultix.</p></div>
       </details>
       <details class="faq">
         <summary>What happens to our data if we terminate the service?</summary>
@@ -550,15 +551,15 @@
       </details>
       <details class="faq">
         <summary>What can our compliance team see?</summary>
-        <div class="faq-body"><p>A dedicated dashboard provides the full verification queue, risk scores based on three signals (face match, liveness, and device reputation), configurable signal weighting, and a review queue for borderline cases. Exportable evidence packages include timestamps and digital signatures.</p></div>
+        <div class="faq-body"><p>A dedicated dashboard provides the full verification queue, risk scores based on three signals (face match, liveness, and device signals), per-tenant review policies, and a review queue for borderline cases. Exportable evidence packages include timestamps and digital signatures.</p></div>
       </details>
       <details class="faq">
         <summary>How long is verification data retained?</summary>
-        <div class="faq-body"><p>Retention is configurable per client. Audit frames are stored in tamper-resistant storage, with a default retention period of 12 to 24 months to support dispute resolution and regulatory evidence requirements. Metadata follows your defined retention policy.</p></div>
+        <div class="faq-body"><p>Retention is configurable per client. Encrypted capture frames are kept for up to 91 days for review and then deleted; evidence objects are retained in tamper-proof storage for a configurable period of 90 days to 10 years. Metadata follows your defined retention policy.</p></div>
       </details>
       <details class="faq">
         <summary>Is the verification flow accessible?</summary>
-        <div class="faq-body"><p>Yes. The capture widget meets WCAG 2.2 AA, with full keyboard navigation, screen-reader guidance, optional audio cues, and conversational error messages in your users' language.</p></div>
+        <div class="faq-body"><p>Yes. Vaultix Gate is designed to WCAG 2.2 AA, with screen-reader guidance and conversational error messages in plain language. An officer-assisted review path is available as an alternative.</p></div>
       </details>
       <details class="faq">
         <summary>How can we integrate Vaultix Gate?</summary>

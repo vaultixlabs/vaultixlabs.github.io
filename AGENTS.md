@@ -15,6 +15,8 @@ robocopy "C:\Users\rodmo\OneDrive\DevProjects\vaultixlabs.github.io" "C:\xampp\h
 
 Trigger: when the user says "publica vaultix web" / "deploy vaultix site", run the command above. This trigger is specific to the Vaultix Gate website deploy only.
 
+Standing rule (2026-11-18): after ANY content change to this site, deploy to XAMPP immediately — do not wait for an explicit "publica".
+
 ## Conventions
 
 - Shared stylesheet: `assets/css? v=N` — bump the `?v=` query in all 10 HTML files after CSS changes.

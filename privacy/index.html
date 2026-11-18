@@ -55,29 +55,30 @@
 
   <h2>2. Data we process</h2>
   <h3>2.1 Through this website</h3>
-  <p>This website is a static site. It sets no tracking cookies and runs no analytics or advertising trackers. The contact form does not transmit data to our servers — it opens your email client with a pre-filled message, so nothing you type is stored by us. If you email us, we process your name, email address and message content solely to respond to your inquiry.</p>
+  <p>This website is a static site. It does not run advertising trackers. We may use analytics tools, such as Google Analytics, to understand how visitors use the site; where required by law, analytics cookies are only set after your consent, and you can withdraw consent or disable cookies at any time through your browser settings. The contact form does not transmit data to our servers — it opens your email client with a pre-filled message, so nothing you type is stored by us. If you email us, we process your name, email address and message content solely to respond to your inquiry.</p>
   <h3>2.2 Through the Vaultix Gate service</h3>
   <p>When a customer integrates Vaultix Gate, we process on their behalf:</p>
   <ul>
     <li><strong>Account/identity metadata</strong> provided by the customer (user reference, document type, document country).</li>
     <li><strong>Biometric data</strong>: face images and face embeddings used for liveness detection and 1:1 matching. Biometric templates are special-category data under GDPR Article 9 and are processed only with the explicit consent recorded before capture.</li>
-    <li><strong>Device and network signals</strong> used for risk scoring (device reputation, proxy/VPN indicators).</li>
+    <li><strong>Device and network signals</strong> used for risk scoring (device and environment signals such as automation indicators, virtual camera detection, and timezone/geolocation consistency).</li>
     <li><strong>Verification events</strong>: scores, decisions, timestamps and evidence records.</li>
   </ul>
   <p>Vaultix never receives or stores payment card data, government ID numbers in clear text beyond what the customer sends, or credentials to the customer's systems.</p>
 
   <h2>3. Legal bases and purposes</h2>
+  <p>For individuals located in the EU/EEA, processing is based on the GDPR legal bases below. For individuals located elsewhere, we rely on equivalent legal bases under the laws of their jurisdiction, such as consent and performance of contract under US state privacy laws and Mexico's LFPDPPP.</p>
   <ul>
-    <li><strong>Performance of contract</strong> (GDPR Art. 6(1)(b)): delivering verification results to the customer.</li>
-    <li><strong>Explicit consent</strong> (GDPR Art. 6(1)(a) and Art. 9(2)(a)): biometric processing, captured and recorded inside the verification flow before any biometric capture occurs.</li>
-    <li><strong>Legal obligation</strong> (GDPR Art. 6(1)(c)): records needed for regulatory audit and dispute evidence.</li>
+    <li><strong>Performance of contract</strong> (GDPR Art. 6(1)(b) or equivalent): delivering verification results to the customer.</li>
+    <li><strong>Explicit consent</strong> (GDPR Art. 6(1)(a) and Art. 9(2)(a), or equivalent consent under applicable law): biometric processing, captured and recorded inside the verification flow before any biometric capture occurs.</li>
+    <li><strong>Legal obligation</strong> (GDPR Art. 6(1)(c) or equivalent): records needed for regulatory audit and dispute evidence.</li>
   </ul>
 
   <h2>4. Where data is stored</h2>
-  <p>The Vaultix Gate EU cell runs entirely on AWS <code>eu-west-1</code> (Ireland). European personal data is stored and processed in the EU. Regional cells are designed so that each market's data remains in its own jurisdiction. Biometric templates are stored separately from personal metadata and are encrypted at rest under per-tenant keys controlled by the customer.</p>
+  <p>The Vaultix Gate EU cell runs entirely on AWS <code>eu-west-1</code> (Ireland). European personal data is stored and processed in the EU. Regional cells are designed so that each market's data remains in its own jurisdiction. Biometric templates are stored separately from personal metadata and are encrypted at rest under dedicated per-tenant keys revocable by the customer.</p>
 
   <h2>5. Retention</h2>
-  <p>Retention is configured per customer. Evidence frames used for audit and dispute purposes default to 12–24 months in write-once storage; other data follows the retention policy agreed with each customer. Upon termination or key revocation, biometric templates become cryptographically unrecoverable.</p>
+  <p>Retention is configured per customer. Evidence objects are retained in write-once storage for a configurable period of 90 days to 10 years; encrypted capture frames are deleted after 91 days; other data follows the retention policy agreed with each customer. Upon termination or key revocation, biometric templates become cryptographically unrecoverable.</p>
 
   <h2>6. Subprocessors and transfers</h2>
   <p>We rely on Amazon Web Services (AWS) as our infrastructure subprocessors. Where personal data is transferred outside the EU/EEA, we use appropriate safeguards (Standard Contractual Clauses or equivalent mechanisms). The current subprocessor list is available to customers under the Data Processing Agreement.</p>

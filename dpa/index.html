@@ -58,7 +58,7 @@
     <tr><td>Subject matter</td><td>Biometric and device-based identity verification for user onboarding</td></tr>
     <tr><td>Duration</td><td>For the term of the Service agreement plus the retention period defined by the Controller</td></tr>
     <tr><td>Nature</td><td>Collection via capture widget/hosted page, biometric matching, risk scoring, evidence storage, audit logging, webhook delivery</td></tr>
-    <tr><td>Purpose</td><td>Identity verification, fraud prevention, regulatory compliance and audit evidence</td></tr>
+    <tr><td>Purpose</td><td>Identity verification, fraud checks, regulatory compliance and audit evidence</td></tr>
   </table>
 
   <h2>3. Categories of personal data and data subjects</h2>
@@ -83,7 +83,7 @@
 
   <h2>5. Security measures (summary — Annex A)</h2>
   <ul>
-    <li>Encryption in transit (TLS) and at rest (AWS KMS, per-tenant customer-managed keys with envelope encryption);</li>
+    <li>Encryption in transit (TLS) and at rest (dedicated per-tenant keys, revocable by the customer, with envelope encryption);</li>
     <li>Zero-persistence handling of plaintext biometrics; ciphertext-only template storage;</li>
     <li>Regional data residency — EU cell in AWS eu-west-1;</li>
     <li>Append-only, hash-chained audit log with write-once storage, RFC 3161 timestamps and ECDSA signatures;</li>

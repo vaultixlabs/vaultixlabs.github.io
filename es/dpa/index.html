@@ -59,7 +59,7 @@
     <tr><td>Objeto</td><td>Verificación de identidad biométrica y basada en dispositivo para onboarding de usuarios</td></tr>
     <tr><td>Duración</td><td>Durante el plazo del acuerdo del Servicio más el período de retención definido por el Responsable</td></tr>
     <tr><td>Naturaleza</td><td>Recolección vía widget de captura/página alojada, comparación biométrica, puntaje de riesgo, almacenamiento de evidencia, registro de auditoría, entrega de webhooks</td></tr>
-    <tr><td>Fin</td><td>Verificación de identidad, prevención de fraude, cumplimiento regulatorio y evidencia de auditoría</td></tr>
+    <tr><td>Fin</td><td>Verificación de identidad, controles antifraude, cumplimiento regulatorio y evidencia de auditoría</td></tr>
   </table>
 
   <h2>3. Categorías de datos personales e interesados</h2>
@@ -84,7 +84,7 @@
 
   <h2>5. Medidas de seguridad (resumen — Anexo A)</h2>
   <ul>
-    <li>Cifrado en tránsito (TLS) y en reposo (AWS KMS, claves por inquilino controladas por el cliente con cifrado de sobre);</li>
+    <li>Cifrado en tránsito (TLS) y en reposo (claves dedicadas por inquilino, revocables por el cliente, con cifrado de sobre);</li>
     <li>Manejo de biometría en texto plano sin persistencia; almacenamiento de plantillas solo en cifrado;</li>
     <li>Residencia regional de datos — celda de la UE en AWS eu-west-1;</li>
     <li>Registro de auditoría inmutable encadenado por hash con almacenamiento de escritura única, sellos RFC 3161 y firmas ECDSA;</li>

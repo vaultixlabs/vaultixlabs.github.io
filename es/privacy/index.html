@@ -56,29 +56,30 @@
 
   <h2>2. Datos que procesamos</h2>
   <h3>2.1 A través de este sitio web</h3>
-  <p>Este sitio web es estático. No instala cookies de rastreo ni ejecuta analíticas o rastreadores publicitarios. El formulario de contacto no transmite datos a nuestros servidores — abre tu cliente de correo con un mensaje pre-llenado, por lo que nada de lo que escribes queda almacenado por nosotros. Si nos envías un correo, procesamos tu nombre, dirección de email y contenido del mensaje únicamente para responder a tu consulta.</p>
+  <p>Este sitio web es estático. No ejecuta rastreadores publicitarios. Podemos utilizar herramientas de analítica, como Google Analytics, para entender cómo los visitantes usan el sitio; cuando la ley lo exija, las cookies de analítica solo se instalan tras tu consentimiento, y puedes retirarlo o desactivar las cookies en cualquier momento desde la configuración de tu navegador. El formulario de contacto no transmite datos a nuestros servidores — abre tu cliente de correo con un mensaje pre-llenado, por lo que nada de lo que escribes queda almacenado por nosotros. Si nos envías un correo, procesamos tu nombre, dirección de email y contenido del mensaje únicamente para responder a tu consulta.</p>
   <h3>2.2 A través del servicio Vaultix Gate</h3>
   <p>Cuando un cliente integra Vaultix Gate, procesamos en su nombre:</p>
   <ul>
     <li><strong>Metadatos de cuenta/identidad</strong> proporcionados por el cliente (referencia de usuario, tipo de documento, país del documento).</li>
     <li><strong>Datos biométricos</strong>: imágenes faciales y embeddings faciales usados para detección de vida y coincidencia 1:1. Las plantillas biométricas son datos de categoría especial bajo el artículo 9 del GDPR y se procesan únicamente con el consentimiento explícito registrado antes de la captura.</li>
-    <li><strong>Señales de dispositivo y red</strong> usadas para el puntaje de riesgo (reputación de dispositivo, indicadores de proxy/VPN).</li>
+    <li><strong>Señales de dispositivo y red</strong> usadas para el puntaje de riesgo (señales de dispositivo y entorno como indicadores de automatización, detección de cámara virtual y coherencia de zona horaria/geolocalización).</li>
     <li><strong>Eventos de verificación</strong>: puntajes, decisiones, marcas de tiempo y registros de evidencia.</li>
   </ul>
   <p>Vaultix nunca recibe ni almacena datos de tarjetas de pago, números de identificación gubernamental en texto claro más allá de lo que el cliente envía, ni credenciales de los sistemas del cliente.</p>
 
   <h2>3. Bases legales y fines</h2>
+  <p>Para personas ubicadas en la UE/EEE, el tratamiento se basa en las bases legales del GDPR indicadas abajo. Para personas ubicadas en otras jurisdicciones, nos apoyamos en bases legales equivalentes previstas por las leyes de su lugar de residencia, como el consentimiento y la ejecución del contrato conforme a las leyes estatales de privacidad de EE. UU. y la LFPDPPP de México.</p>
   <ul>
-    <li><strong>Ejecución del contrato</strong> (GDPR art. 6(1)(b)): entregar los resultados de verificación al cliente.</li>
-    <li><strong>Consentimiento explícito</strong> (GDPR art. 6(1)(a) y art. 9(2)(a)): procesamiento biométrico, capturado y registrado dentro del flujo de verificación antes de cualquier captura biométrica.</li>
-    <li><strong>Obligación legal</strong> (GDPR art. 6(1)(c)): registros necesarios para auditoría regulatoria y evidencia de disputas.</li>
+    <li><strong>Ejecución del contrato</strong> (GDPR art. 6(1)(b) o equivalente): entregar los resultados de verificación al cliente.</li>
+    <li><strong>Consentimiento explícito</strong> (GDPR art. 6(1)(a) y art. 9(2)(a), o consentimiento equivalente conforme a la ley aplicable): procesamiento biométrico, capturado y registrado dentro del flujo de verificación antes de cualquier captura biométrica.</li>
+    <li><strong>Obligación legal</strong> (GDPR art. 6(1)(c) o equivalente): registros necesarios para auditoría regulatoria y evidencia de disputas.</li>
   </ul>
 
   <h2>4. Dónde se almacenan los datos</h2>
-  <p>La celda de la UE de Vaultix Gate opera íntegramente en AWS <code>eu-west-1</code> (Irlanda). Los datos personales europeos se almacenan y procesan en la UE. Las celdas regionales están diseñadas para que los datos de cada mercado permanezcan en su propia jurisdicción. Las plantillas biométricas se almacenan separadas de los metadatos personales y cifradas en reposo bajo claves por inquilino controladas por el cliente.</p>
+  <p>La celda de la UE de Vaultix Gate opera íntegramente en AWS <code>eu-west-1</code> (Irlanda). Los datos personales europeos se almacenan y procesan en la UE. Las celdas regionales están diseñadas para que los datos de cada mercado permanezcan en su propia jurisdicción. Las plantillas biométricas se almacenan separadas de los metadatos personales y cifradas en reposo bajo claves dedicadas por inquilino revocables por el cliente.</p>
 
   <h2>5. Retención</h2>
-  <p>La retención se configura por cliente. Los fotogramas de evidencia usados para auditoría y disputas tienen por defecto 12–24 meses en almacenamiento de escritura única; los demás datos siguen la política de retención acordada con cada cliente. Al finalizar el servicio o revocar las claves, las plantillas biométricas se vuelven criptográficamente irrecuperables.</p>
+  <p>La retención se configura por cliente. Los objetos de evidencia se conservan en almacenamiento de escritura única durante un periodo configurable de 90 días a 10 años; los fotogramas de captura cifrados se eliminan tras 91 días; los demás datos siguen la política de retención acordada con cada cliente. Al finalizar el servicio o revocar las claves, las plantillas biométricas se vuelven criptográficamente irrecuperables.</p>
 
   <h2>6. Subencargados y transferencias</h2>
   <p>Dependemos de Amazon Web Services (AWS) como subencargados de infraestructura. Cuando los datos personales se transfieren fuera del EEE, utilizamos garantías apropiadas (Cláusulas Contractuales Tipo o mecanismos equivalentes). La lista actual de subencargados está disponible para los clientes en el Acuerdo de Encargado del Tratamiento.</p>

@@ -57,7 +57,7 @@
         "applicationCategory": "SecurityApplication",
         "operatingSystem": "Web",
         "url": "https://vaultixlabs.com/es/",
-        "description": "Verificación de identidad biométrica para bancos, neobancos y fintechs: liveness certificado, coincidencia facial, inteligencia de dispositivo y auditoría criptográfica.",
+        "description": "Verificación de identidad biométrica para bancos, neobancos y fintechs: liveness de AWS Rekognition, coincidencia facial, inteligencia de dispositivo y auditoría criptográfica.",
         "provider": { "@id": "https://vaultixlabs.com/#org" }
       },
       {
@@ -68,17 +68,17 @@
           {
             "@type": "Question",
             "name": "¿Dónde se almacenan los datos biométricos de nuestros usuarios?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Vaultix Gate opera en Estados Unidos, América Latina y Europa. Para los clientes de la Unión Europea, los datos biométricos se almacenan en Europa, en apoyo al cumplimiento del Reglamento General de Protección de Datos (GDPR)." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Vaultix Gate atiende organizaciones en Europa, Estados Unidos y América Latina. Para los clientes de la Unión Europea, los datos biométricos se almacenan en Europa, en apoyo al cumplimiento del Reglamento General de Protección de Datos (GDPR)." }
           },
           {
             "@type": "Question",
             "name": "¿Puede Vaultix Labs acceder a las plantillas faciales de nuestros usuarios?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Las plantillas biométricas se cifran con claves dedicadas bajo el control de tu organización. Al revocar una clave, las plantillas protegidas se vuelven inaccesibles, incluso para Vaultix Labs." }
+            "acceptedAnswer": { "@type": "Answer", "text": "No. Los datos faciales se cifran bajo claves dedicadas por cliente que tu organización puede revocar en cualquier momento. Al revocar una clave, las plantillas que protege se vuelven irrecuperables, incluso para Vaultix Labs." }
           },
           {
             "@type": "Question",
             "name": "¿Qué pasa con nuestros datos si terminamos el servicio?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Las capturas originales se eliminan después del procesamiento. Tu organización también puede revocar las claves de cifrado para impedir el acceso a las plantillas biométricas protegidas por ellas." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Los fotogramas de captura cifrados se conservan hasta 91 días para revisión y luego se eliminan. Tu organización también puede revocar las claves de cifrado para impedir el acceso a las plantillas biométricas protegidas por ellas." }
           },
           {
             "@type": "Question",
@@ -93,17 +93,17 @@
           {
             "@type": "Question",
             "name": "¿Cuánto tiempo se conservan los datos de verificación?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Las capturas originales se eliminan después del procesamiento. Las plantillas biométricas cifradas y un conjunto limitado de imágenes de auditoría se conservan como evidencia. El periodo exacto de conservación debe confirmarse según la política aplicable al servicio." }
+            "acceptedAnswer": { "@type": "Answer", "text": "La retención es configurable por cliente. Los fotogramas de captura cifrados se conservan hasta 91 días para revisión y luego se eliminan; los objetos de evidencia se conservan en almacenamiento a prueba de alteraciones durante un periodo configurable de 90 días a 10 años. Los metadatos siguen tu política de retención definida." }
           },
           {
             "@type": "Question",
             "name": "¿El flujo de verificación es accesible?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Sí. Vaultix Gate está diseñado para cumplir con WCAG 2.2 AA e incluye navegación por teclado, indicaciones compatibles con lectores de pantalla y señales de audio opcionales." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Sí. Vaultix Gate está diseñado para cumplir con WCAG 2.2 AA, con guía para lectores de pantalla y mensajes de error conversacionales en lenguaje claro. La revisión asistida por un oficial está disponible como vía alternativa." }
           },
           {
             "@type": "Question",
             "name": "¿Cómo podemos integrar Vaultix Gate?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Puedes integrar la verificación mediante un componente web, utilizar una página alojada por Vaultix Gate o conectar directamente nuestras API con tus sistemas. Elige el modelo que mejor se adapte a tu arquitectura." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Puedes integrar la verificación mediante un componente web, usar la página de verificación que Vaultix Gate gestiona por ti o conectarte directamente a nuestras API. Elige el modelo que mejor se adapte a tu arquitectura." }
           }
         ]
       }
@@ -173,14 +173,14 @@
             <div class="queue-head"><span>Solicitante</span><span style="text-align:right">Riesgo</span><span style="text-align:right">Estado</span></div>
             <div class="qrow"><div class="hash">u_9f2a…c41d<small>pasaporte · ES</small></div><div class="score low">08</div><div class="pill low">SCA OK</div></div>
             <div class="qrow"><div class="hash">u_77be…09af<small>doc identidad · DE</small></div><div class="score low">14</div><div class="pill low">SCA OK</div></div>
-            <div class="qrow"><div class="hash">u_b31c…88e2<small>licencia de conducir · FR</small></div><div class="score med">47</div><div class="pill med">STEP-UP</div></div>
+            <div class="qrow"><div class="hash">u_b31c…88e2<small>licencia de conducir · FR</small></div><div class="score med">47</div><div class="pill med">REVISIÓN</div></div>
             <div class="qrow"><div class="hash">u_4dd0…13bb<small>doc identidad · IT</small></div><div class="score low">11</div><div class="pill rev">REVISIÓN</div></div>
           </div>
         </div>
       </div>
       <div class="float-card">
-        <span class="chk">✓ Coincidencia de foto 96.4</span> · Liveness certificado
-        <small>Cifrado con claves del cliente · evidencia firmada</small>
+        <span class="chk">✓ Coincidencia de foto 96.4</span> · Liveness de AWS Rekognition
+        <small>Cifrado con claves dedicadas por cliente · evidencia firmada</small>
       </div>
     </div>
   </div>
@@ -192,7 +192,7 @@
     <div class="section-head">
       <div class="eyebrow">Cómo funciona</div>
       <h2>Cuatro pasos para verificar una identidad. Una decisión respaldada por evidencia.</h2>
-      <p class="lead">Vaultix Gate analiza el documento de identidad, comprueba que la persona esté presente mediante Liveness, compara su rostro con la fotografía del documento y evalúa el riesgo. Al finalizar, entrega una decisión respaldada por evidencia verificable.</p>
+      <p class="lead">Vaultix Gate analiza el documento de identidad, comprueba que la persona esté presente mediante la tecnología Liveness, compara su rostro con la fotografía del documento y evalúa el riesgo. Al finalizar, entrega una decisión respaldada por evidencia verificable.</p>
     </div>
     <div class="steps">
       <div class="step">
@@ -208,7 +208,7 @@
       <div class="step">
         <div class="num">03</div>
         <h3>Liveness y comparación facial</h3>
-        <p>Liveness comprueba que la captura corresponde a una persona real y presente. Después, Vaultix Gate compara su rostro con la fotografía del documento.</p>
+        <p>La tecnología Liveness comprueba que la captura corresponde a una persona real y presente. Después, Vaultix Gate compara su rostro con la fotografía del documento.</p>
       </div>
       <div class="step">
         <div class="num">04</div>
@@ -225,11 +225,11 @@
     <div class="feat-copy">
       <div class="eyebrow">Experiencia de captura</div>
       <h2>Indicaciones claras para una <span class="serif">captura de calidad</span>.</h2>
-      <p>Vaultix Gate analiza las imágenes directamente en el dispositivo del usuario y le indica cómo corregir problemas de iluminación, encuadre o reflejos antes de enviar la captura. Las instrucciones son claras, aparecen en tiempo real y se adaptan al idioma del usuario.</p>
+      <p>Vaultix Gate analiza las imágenes directamente en el dispositivo del usuario y le indica cómo corregir problemas de iluminación, encuadre o reflejos antes de enviar la captura. Las instrucciones son claras, aparecen en tiempo real y guían al usuario paso a paso hasta corregirlo.</p>
       <ul>
         <li>Comprueba la iluminación, el encuadre y los reflejos en tiempo real, antes de enviar la imagen.</li>
         <li>Ofrece instrucciones sencillas para corregir problemas durante la captura.</li>
-        <li>Comunica las indicaciones a través de lectores de pantalla y admite navegación por teclado.</li>
+        <li>Comunica las indicaciones a través de lectores de pantalla.</li>
       </ul>
     </div>
     <div class="vis">
@@ -268,12 +268,12 @@
   <div class="container feat-grid flip">
     <div class="feat-copy">
       <div class="eyebrow">Custodia de datos</div>
-      <h2>Tus datos biométricos. <span class="serif">Tus claves. Tu control.</span></h2>
-      <p>Las plantillas biométricas se cifran desde su creación con claves dedicadas y controladas por tu organización. Si revocas una clave, las plantillas protegidas por ella se vuelven inaccesibles, incluso para Vaultix Labs.</p>
+      <h2>Tus datos biométricos. <span class="serif">Claves que puedes revocar.</span></h2>
+      <p>Las plantillas biométricas se cifran desde su creación bajo claves dedicadas por cliente que tu organización puede revocar en cualquier momento. Al revocar una clave, las plantillas que protege quedan irrecuperables.</p>
       <ul>
-        <li>Claves bajo tu control: cada cliente cuenta con claves de cifrado dedicadas mediante AWS Key Management Service (KMS), que pueden revocarse en cualquier momento</li>
+        <li>Revocables por ti: claves de cifrado dedicadas para cada cliente, revocables en cualquier momento</li>
         <li>Separación de datos: las plantillas biométricas se almacenan por separado de la información personal</li>
-        <li>Residencia regional: los datos sensibles permanecen en la infraestructura regional asignada a tu organización. Para los clientes de la Unión Europea, los datos biométricos se almacenan en Europa, en apoyo al cumplimiento del Reglamento General de Protección de Datos (GDPR)</li>
+        <li>Ubicación de los datos: para clientes de la Unión Europea, los datos biométricos se almacenan en la región de la UE, dando así cumplimiento a la ley europea de protección de datos (GDPR).</li>
       </ul>
     </div>
     <div class="vis">
@@ -282,8 +282,8 @@
           <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5zm-3 8V7a3 3 0 1 1 6 0v3H9z" fill="#C9A227"/></svg>
         </div>
         <div class="cap">Plantilla #7F3A, cifrada desde su creación</div>
-        <div class="vector-row"><i>x₁</i><i>x₂</i><i>x₃</i><i>…</i><i>x₅₁₁</i><i>x₅₁₂</i></div>
-        <div class="cap">Firma facial de 512 números · almacenada solo como texto cifrado</div>
+        <div class="vector-row"><i>0x9f</i><i>0x2c</i><i>0xa7</i><i>…</i><i>0x41</i><i>0xd8</i></div>
+        <div class="cap">Referencia facial cifrada · almacenada solo como texto cifrado</div>
         <div class="shred">Clave revocada → <b>irrecuperable</b> · incluso para nosotros</div>
       </div>
     </div>
@@ -296,7 +296,8 @@
     <div class="feat-copy">
       <div class="eyebrow">Consola de cumplimiento</div>
       <h2>Cada verificación, con evidencia <span class="serif">clara y trazable</span>.</h2>
-      <p>Vaultix Gate proporciona a tu equipo una visión detallada de cada decisión de verificación: el puntaje de riesgo, las señales que la respaldan y la evidencia firmada digitalmente. Tu equipo puede revisar los casos que requieren atención y compartir los registros para auditorías, inspecciones regulatorias o revisiones internas.</p>
+      <p>Vaultix Gate proporciona a tu equipo de riesgo y cumplimiento una visión detallada de cada decisión de verificación: el puntaje de riesgo, las señales que la respaldan y la evidencia firmada digitalmente.</p>
+      <p>Tu equipo de riesgo y cumplimiento puede revisar los casos que requieren atención y compartir los registros para auditorías, inspecciones regulatorias o revisiones internas.</p>
       <ul>
         <li>Configura los criterios de evaluación de riesgo y consulta los resultados obtenidos a partir de las señales biométricas, Liveness y del dispositivo.</li>
         <li>Guarda y comparte registros de verificación firmados digitalmente con entes reguladores, auditores y otros interesados.</li>
@@ -336,22 +337,22 @@
           <tr>
             <td>Experiencia de usuario</td>
             <td class="them">Mensajes de error genéricos que dificultan corregir problemas durante la captura.</td>
-            <td class="us-cell"><span class="tick">✓</span> Indicaciones claras y adaptadas al idioma del usuario para corregir problemas durante la captura.</td>
+            <td class="us-cell"><span class="tick">✓</span> Indicaciones claras y fáciles de entender para corregir problemas durante la captura.</td>
           </tr>
           <tr>
             <td>Seguridad de los datos</td>
             <td class="them">Modelos de almacenamiento en los que el proveedor controla las claves de cifrado.</td>
-            <td class="us-cell"><span class="tick">✓</span> Plantillas biométricas cifradas con claves bajo el control de tu organización.</td>
+            <td class="us-cell"><span class="tick">✓</span> Plantillas biométricas cifradas con claves dedicadas a cada cliente, revocables por tu organización.</td>
           </tr>
           <tr>
-            <td>Residencia de datos</td>
+            <td>Ubicación de los datos</td>
             <td class="them">Opciones de almacenamiento regional que pueden variar según el proveedor.</td>
             <td class="us-cell"><span class="tick">✓</span> Infraestructura regional, con almacenamiento de datos biométricos en Europa para clientes de la UE.</td>
           </tr>
           <tr>
             <td>Modelo de precios</td>
             <td class="them">Licencias por usuario o paquetes de verificaciones.</td>
-            <td class="us-cell"><span class="tick">✓</span> Pago por verificación ejecutada.</td>
+            <td class="us-cell"><span class="tick">✓</span> Pago por cada verificación ejecutada, sin licencias ni paquetes fijos.</td>
           </tr>
           <tr>
             <td>Evidencia de auditoría</td>
@@ -361,7 +362,7 @@
           <tr>
             <td>Accesibilidad</td>
             <td class="them">Funciones de accesibilidad que varían según la solución.</td>
-            <td class="us-cell"><span class="tick">✓</span> Diseño orientado al cumplimiento de Web Content Accessibility Guidelines (WCAG) 2.2 AA, con navegación por teclado y asistencia para lectores de pantalla.</td>
+            <td class="us-cell"><span class="tick">✓</span> Diseño orientado al cumplimiento de Web Content Accessibility Guidelines (WCAG) 2.2 AA, con guía en pantalla para corregir problemas de captura.</td>
           </tr>
         </tbody>
       </table>
@@ -375,7 +376,7 @@
     <div class="section-head">
       <div class="eyebrow">Para quién es</div>
       <h2>Verifica identidades. <span class="serif">Protege tu negocio.</span></h2>
-      <p class="lead">Vaultix Gate permite verificar clientes, empleados y proveedores durante su incorporación, así como en operaciones que requieren controles adicionales de identidad.</p>
+      <p class="lead">Vaultix Gate permite verificar clientes, empleados y proveedores durante su incorporación, ayudando a las organizaciones a confirmar identidades en línea con confianza.</p>
     </div>
     <div class="cards-3">
       <div class="card">
@@ -395,16 +396,16 @@
         <ul>
           <li>Verifica candidatos y empleados remotos.</li>
           <li>Comprueba la identidad de proveedores durante su registro.</li>
-          <li>Integra la verificación mediante componentes web o páginas alojadas.</li>
+          <li>Integra la verificación mediante componentes web o la página de verificación gestionada por Vaultix.</li>
         </ul>
       </div>
       <div class="card">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3z" stroke="#C9A227" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="#C9A227" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Acceso y operaciones sensibles</h3>
+        <h3>Verificación adicional</h3>
         <p>Añade verificaciones de identidad cuando una situación requiera controles adicionales.</p>
         <ul>
-          <li>Solicita verificaciones biométricas ante actividades de riesgo.</li>
-          <li>Comprueba la identidad antes de operaciones sensibles.</li>
+          <li>Solicita una nueva verificación cuando tus políticas de riesgo requieran controles adicionales.</li>
+          <li>Ejecuta verificaciones antes de operaciones sensibles o accesos a cuentas.</li>
           <li>Configura criterios de riesgo para determinar cuándo se requiere una revisión adicional.</li>
         </ul>
       </div>
@@ -421,7 +422,7 @@
     <div class="econ-grid">
       <div><h3>Eficiencia operativa</h3><p>Automatiza las verificaciones rutinarias y dirige los casos que requieren atención a tu equipo de revisión.</p></div>
       <div><h3>Escalabilidad</h3><p>Aumenta o reduce el volumen de verificaciones según la actividad de tu organización, sin construir ni mantener infraestructura propia.</p></div>
-      <div><h3>Integración sencilla</h3><p>Implementa Vaultix Gate mediante páginas alojadas o componentes web, sin desarrollar una solución de verificación desde cero.</p></div>
+      <div><h3>Integración sencilla</h3><p>Implementa Vaultix Gate mediante la página de verificación gestionada por Vaultix o componentes web, sin desarrollar una solución de verificación desde cero.</p></div>
     </div>
   </div>
 </section>
@@ -432,7 +433,7 @@
     <div class="section-head">
       <div class="eyebrow">Para tu equipo de tecnología</div>
       <h2>Tres formas de integrar Vaultix Gate. <span class="serif">Una misma tecnología de verificación.</span></h2>
-      <p class="lead">Integra la verificación de identidad en tu arquitectura mediante un componente web, una página alojada o nuestras API. Elige la opción que mejor se adapte a tu aplicación y a tus necesidades de desarrollo.</p>
+      <p class="lead">Integra la verificación de identidad en tu arquitectura mediante un componente web, una página de verificación que Vaultix Gate crea y gestiona por ti, o mediante una integración directa con nuestras API. Elige la opción que mejor se adapte a tu aplicación y a tus necesidades de desarrollo.</p>
     </div>
     <div class="cards-3">
       <div class="card">
@@ -450,16 +451,16 @@
       </div>
       <div class="card">
         <div class="int-num">02</div>
-        <h3>Verificación alojada</h3>
+        <h3>Página de verificación lista para usar</h3>
         <p class="int-sub">Nuestra experiencia de verificación. Tu aplicación.</p>
-        <p>Utiliza una página de verificación gestionada por Vaultix Gate. Tu backend crea las sesiones mediante la API REST y recibe actualizaciones sobre su progreso y resultados a través de webhooks firmados.</p>
+        <p>Usa una página de verificación que Vaultix Gate crea, aloja y gestiona por ti. Tu backend solo crea las sesiones mediante la API REST y recibe actualizaciones sobre el progreso y los resultados a través de webhooks firmados.</p>
         <ul>
-          <li>Página de verificación alojada y gestionada por Vaultix.</li>
+          <li>Página de verificación lista para usar, sin desarrollo propio.</li>
           <li>Creación y administración de sesiones mediante API REST.</li>
           <li>Notificaciones mediante webhooks firmados.</li>
           <li>Implementación sin necesidad de desarrollar ni mantener un componente de captura frontend.</li>
         </ul>
-        <div class="int-visual"><svg viewBox="0 0 240 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Página de verificación alojada"><rect width="240" height="130" fill="#0E1526"/><rect x="20" y="16" width="200" height="98" rx="8" fill="#F4F1E8"/><rect x="20" y="16" width="200" height="18" rx="8" fill="#E4DECD"/><circle cx="32" cy="25" r="3" fill="#C9A227"/><circle cx="43" cy="25" r="3" fill="#B9C2D4"/><circle cx="54" cy="25" r="3" fill="#B9C2D4"/><rect x="70" y="46" width="60" height="7" rx="3.5" fill="#C9A227"/><rect x="70" y="60" width="100" height="5" rx="2.5" fill="#C9CFDB"/><rect x="70" y="70" width="86" height="5" rx="2.5" fill="#C9CFDB"/><rect x="70" y="80" width="92" height="5" rx="2.5" fill="#C9CFDB"/><rect x="70" y="96" width="52" height="12" rx="6" fill="#0E1526"/><path d="M140 102 l4 4 8 -8" fill="none" stroke="#C9A227" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><rect x="70" y="114" width="34" height="4" rx="2" fill="#D8D2C2"/></svg></div>
+        <div class="int-visual"><svg viewBox="0 0 240 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Página de verificación gestionada por Vaultix"><rect width="240" height="130" fill="#0E1526"/><rect x="20" y="16" width="200" height="98" rx="8" fill="#F4F1E8"/><rect x="20" y="16" width="200" height="18" rx="8" fill="#E4DECD"/><circle cx="32" cy="25" r="3" fill="#C9A227"/><circle cx="43" cy="25" r="3" fill="#B9C2D4"/><circle cx="54" cy="25" r="3" fill="#B9C2D4"/><rect x="70" y="46" width="60" height="7" rx="3.5" fill="#C9A227"/><rect x="70" y="60" width="100" height="5" rx="2.5" fill="#C9CFDB"/><rect x="70" y="70" width="86" height="5" rx="2.5" fill="#C9CFDB"/><rect x="70" y="80" width="92" height="5" rx="2.5" fill="#C9CFDB"/><rect x="70" y="96" width="52" height="12" rx="6" fill="#0E1526"/><path d="M140 102 l4 4 8 -8" fill="none" stroke="#C9A227" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><rect x="70" y="114" width="34" height="4" rx="2" fill="#D8D2C2"/></svg></div>
       </div>
       <div class="card">
         <div class="int-num">03</div>
@@ -477,7 +478,7 @@
     </div>
     <div class="int-footer">
       <h3>Un motor de verificación. Tres caminos de integración.</h3>
-      <p>Desde el onboarding de clientes y empleados hasta la verificación de proveedores y la prevención de fraude, Vaultix Gate combina captura guiada, detección de liveness, coincidencia facial 1:1 e inteligencia de dispositivo para ayudar a las organizaciones a generar confianza y tomar decisiones de identidad informadas.</p>
+      <p>Desde el onboarding de clientes y empleados hasta la verificación de proveedores y los controles antifraude, Vaultix Gate combina captura guiada, detección de liveness, coincidencia facial 1:1 e inteligencia de dispositivo para ayudar a las organizaciones a generar confianza y tomar decisiones de identidad informadas.</p>
       <p class="int-tag">Construido para adaptarse a tu arquitectura. Listo para dondequiera que la verificación de identidad importe.</p>
       <div style="margin-top:26px">
         <a class="btn btn-ghost" href="mailto:hello@vaultixlabs.com?subject=Documentación%20de%20API%20e%20integración">Pedir docs de API</a>
@@ -492,20 +493,20 @@
     <div class="section-head">
       <div class="eyebrow">Seguridad y privacidad</div>
       <h2>Protege tus datos. <span class="serif">Mantén el control.</span></h2>
-      <p class="lead">Vaultix Gate registra automáticamente las decisiones de verificación y conserva evidencia de los controles aplicados. Tu organización mantiene el control de las claves de cifrado y puede consultar registros verificables para auditorías y revisiones de cumplimiento.</p>
+      <p class="lead">Vaultix Gate registra automáticamente las decisiones de verificación y conserva evidencia de los controles aplicados. Tu organización puede revocar las claves de cifrado de su cliente en cualquier momento y puede consultar registros verificables para auditorías y revisiones de cumplimiento.</p>
     </div>
     <div class="sec-grid">
       <div class="sec-card">
         <h3><span class="dot-i"></span>Datos biométricos siempre cifrados</h3>
-        <p>Las imágenes faciales y los datos biométricos nunca se almacenan sin cifrar. Las capturas originales se eliminan después del procesamiento; las plantillas cifradas y un conjunto limitado de imágenes de auditoría se conservan como evidencia.</p>
+        <p>Las imágenes faciales y los datos biométricos nunca se almacenan sin cifrar. El texto plano biométrico nunca se persiste; los fotogramas de captura cifrados se conservan hasta 91 días para revisión y luego se eliminan automáticamente. Las plantillas cifradas y un conjunto limitado de imágenes de auditoría se conservan como evidencia.</p>
       </div>
       <div class="sec-card">
-        <h3><span class="dot-i"></span>Claves bajo el control de tu organización</h3>
-        <p>Cada cliente dispone de claves de cifrado dedicadas y mantiene el control del material criptográfico. Al revocar una clave, las plantillas protegidas se vuelven irrecuperables, incluso para Vaultix Labs.</p>
+        <h3><span class="dot-i"></span>Claves revocables por tu organización</h3>
+        <p>Cada cliente dispone de claves de cifrado dedicadas que puede revocar en cualquier momento. Al revocar una clave, las plantillas protegidas se vuelven irrecuperables, incluso para Vaultix Labs.</p>
       </div>
       <div class="sec-card">
-        <h3><span class="dot-i"></span>Residencia regional de datos</h3>
-        <p>Los datos se almacenan en infraestructura regional en Estados Unidos, América Latina y Europa. Para los clientes europeos, los datos biométricos permanecen dentro de Europa, en apoyo al cumplimiento del GDPR.</p>
+        <h3><span class="dot-i"></span>Datos almacenados en Europa para clientes de la UE</h3>
+        <p>Para los clientes europeos, los datos biométricos se almacenan en Europa, en apoyo al cumplimiento del GDPR.</p>
       </div>
       <div class="sec-card">
         <h3><span class="dot-i"></span>Registros de auditoría firmados digitalmente</h3>
@@ -513,11 +514,11 @@
       </div>
       <div class="sec-card">
         <h3><span class="dot-i"></span>Consentimiento antes de la captura</h3>
-        <p>Vaultix Gate registra el consentimiento explícito del usuario, en su idioma, antes de iniciar la captura biométrica. Sin consentimiento, no comienza la captura.</p>
+        <p>Vaultix Gate registra el consentimiento explícito del usuario antes de iniciar la captura biométrica. Sin consentimiento, no comienza la captura.</p>
       </div>
       <div class="sec-card">
         <h3><span class="dot-i"></span>Accesibilidad desde el diseño</h3>
-        <p>La plataforma está diseñada para cumplir con WCAG 2.2 AA e incluye navegación por teclado, indicaciones compatibles con lectores de pantalla y señales de audio opcionales.</p>
+        <p>Diseñado para WCAG 2.2 AA: guía para lectores de pantalla y mensajes de error conversacionales. Revisión asistida por un oficial disponible como vía alternativa.</p>
       </div>
     </div>
   </div>
@@ -533,15 +534,15 @@
     <div class="faq-list">
       <details class="faq">
         <summary>¿Dónde se almacenan los datos biométricos de nuestros usuarios?</summary>
-        <div class="faq-body"><p>Vaultix Gate opera en Estados Unidos, América Latina y Europa. Para los clientes de la Unión Europea, los datos biométricos se almacenan en Europa, en apoyo al cumplimiento del GDPR.</p></div>
+        <div class="faq-body"><p>Vaultix Gate atiende organizaciones en Europa, Estados Unidos y América Latina. Para los clientes de la Unión Europea, los datos biométricos se almacenan en Europa, en apoyo al cumplimiento del GDPR.</p></div>
       </details>
       <details class="faq">
         <summary>¿Puede Vaultix Labs acceder a las plantillas faciales de nuestros usuarios?</summary>
-        <div class="faq-body"><p>Las plantillas biométricas se cifran con claves dedicadas bajo el control de tu organización. Al revocar una clave, las plantillas protegidas se vuelven inaccesibles, incluso para Vaultix Labs.</p></div>
+        <div class="faq-body"><p>No. Los datos faciales se cifran bajo claves dedicadas por cliente que tu organización puede revocar en cualquier momento. Al revocar una clave, las plantillas que protege se vuelven irrecuperables, incluso para Vaultix Labs.</p></div>
       </details>
       <details class="faq">
         <summary>¿Qué pasa con nuestros datos si terminamos el servicio?</summary>
-        <div class="faq-body"><p>Las capturas originales se eliminan después del procesamiento. Tu organización también puede revocar las claves de cifrado para impedir el acceso a las plantillas biométricas protegidas por ellas.</p></div>
+        <div class="faq-body"><p>Los fotogramas de captura cifrados se conservan hasta 91 días para revisión y luego se eliminan. Tu organización también puede revocar las claves de cifrado para impedir el acceso a las plantillas biométricas protegidas por ellas.</p></div>
       </details>
       <details class="faq">
         <summary>¿Cómo ayuda Vaultix Gate con el cumplimiento de PSD2 y GDPR?</summary>
@@ -553,15 +554,15 @@
       </details>
       <details class="faq">
         <summary>¿Cuánto tiempo se conservan los datos de verificación?</summary>
-        <div class="faq-body"><p>Las capturas originales se eliminan después del procesamiento. Las plantillas biométricas cifradas y un conjunto limitado de imágenes de auditoría se conservan como evidencia. El periodo exacto de conservación debe confirmarse según la política aplicable al servicio.</p></div>
+        <div class="faq-body"><p>La retención es configurable por cliente. Los fotogramas de captura cifrados se conservan hasta 91 días para revisión y luego se eliminan; los objetos de evidencia se conservan en almacenamiento a prueba de alteraciones durante un periodo configurable de 90 días a 10 años. Los metadatos siguen tu política de retención definida.</p></div>
       </details>
       <details class="faq">
         <summary>¿El flujo de verificación es accesible?</summary>
-        <div class="faq-body"><p>Sí. Vaultix Gate está diseñado para cumplir con WCAG 2.2 AA e incluye navegación por teclado, indicaciones compatibles con lectores de pantalla y señales de audio opcionales.</p></div>
+        <div class="faq-body"><p>Sí. Vaultix Gate está diseñado para cumplir con WCAG 2.2 AA, con guía para lectores de pantalla y mensajes de error conversacionales en lenguaje claro. La revisión asistida por un oficial está disponible como vía alternativa.</p></div>
       </details>
       <details class="faq">
         <summary>¿Cómo podemos integrar Vaultix Gate?</summary>
-        <div class="faq-body"><p>Puedes integrar la verificación mediante un componente web, utilizar una página alojada por Vaultix Gate o conectar directamente nuestras API con tus sistemas. Elige el modelo que mejor se adapte a tu arquitectura.</p></div>
+        <div class="faq-body"><p>Puedes integrar la verificación mediante un componente web, usar la página de verificación que Vaultix Gate gestiona por ti o conectarte directamente a nuestras API. Elige el modelo que mejor se adapte a tu arquitectura.</p></div>
       </details>
     </div>
   </div>
